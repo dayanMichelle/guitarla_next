@@ -1,15 +1,16 @@
 import Entrada from "../components/Entrada"
 import Layout from "../components/Layout"
+import styles from '../styles/Blog.module.css'
 
 const blog = ({entradas}) => {
-  console.log(entradas)
+
   return (
     <Layout
     page="Blog"
     >
       <main className="contenedor">
         <h2 className="heading">Blog</h2>
-        <div>
+        <div className={styles.blog}>
           {entradas.map(entrada => (
             <Entrada 
             key={entrada.id}
