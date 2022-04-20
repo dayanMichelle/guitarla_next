@@ -22,7 +22,7 @@ const blog = ({entradas}) => {
     </Layout>
   )
 }
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const url = 'http://localhost:1337/blogs'
   const respuesta = await fetch(url)
   const entradas = await respuesta.json()
