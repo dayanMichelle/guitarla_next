@@ -4,7 +4,7 @@ import { formatearFecha } from "../helpers";
 import styles from '../styles/Entrada.module.css'
 
 const Entrada = ({ entrada }) => {
-  const { titulo, resumen, imagen, published_at,id } = entrada;
+  const { titulo, resumen, imagen, published_at,id,url } = entrada;
   console.log('la entrada es: ', entrada);
 
   return (
@@ -21,7 +21,7 @@ const Entrada = ({ entrada }) => {
         <h3>{titulo}</h3>
         <p className={styles.fecha}>{formatearFecha(published_at)}</p>
         <p className={styles.resumen}>{resumen}</p>
-        <Link href={`/blog/${id}`}>
+        <Link href={`/blog/${url}`}>
           <a className={styles.enlace}>Leer Entrada</a>
         </Link>
       </div>

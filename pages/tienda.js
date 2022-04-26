@@ -1,14 +1,24 @@
-import Layout from '../components/Layout'
+import Layout from "../components/Layout";
 
-const tienda = () => {
+const Tienda = ({ guitarras }) => {
   return (
-    
-    <Layout
-    page="Tienda"
-    >
-      <h1>tienda</h1>
+    <Layout page="Tienda">
+      <main className="contenedor">
+        <h1 className="heading">Nuestra Colección</h1>
+      </main>
     </Layout>
-  )
+  );
+};
+
+export async function getStaticProps() {
+  const url = `${process.env.API_URL}/guitarras`;
+  const response = await fetch(url);
+  const guitarras = await response.json();
+  return {
+    props: {
+      guitarras,
+    },
+  };
 }
 
-export default tienda
+export default Tienda;
