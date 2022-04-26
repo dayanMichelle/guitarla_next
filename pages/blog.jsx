@@ -3,7 +3,7 @@ import Layout from "../components/Layout"
 import styles from '../styles/Blog.module.css'
 
 const blog = ({entradas}) => {
-
+  const url =`${process.env.NEXT_PUBLIC_API_URL}/blogs`
   return (
     <Layout
     page="Blog"
@@ -23,7 +23,7 @@ const blog = ({entradas}) => {
   )
 }
 export async function getStaticProps() {
-  const url = 'http://localhost:1337/blogs'
+  const url = `${process.env.API_URL}/blogs`
   const respuesta = await fetch(url)
   const entradas = await respuesta.json()
   return{

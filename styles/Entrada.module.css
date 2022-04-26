@@ -13,6 +13,13 @@
     font-size: 1.6rem;
     color: var(--primary);
 }
+.resumen
+{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+}
 .enlace
 {
     margin-top: 2rem;
