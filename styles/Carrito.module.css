@@ -5,6 +5,7 @@
 @media (min-width: 768px) {
     .contenido {
         grid-template-columns: 3fr 2fr;
+        align-items: flex-start;
     }
 }
     
@@ -17,6 +18,7 @@
     gap:4rem;
     align-items: center;
     border-bottom: 1px solid #cfcfcf;
+    position: relative;
 }
 .producto:last-of-type{
     border:none;
@@ -58,4 +60,19 @@
 }
 .subtotal span {
     font-size: 2.4rem;
+}
+.eliminar {
+    all: unset;
+    position: absolute;
+    top: 3rem;
+    right: 1rem;
+    font-weight: bold;
+}
+.eliminar:hover {
+    cursor: pointer;
+}
+.resumen {
+    background-color: #F9FAFB;
+    padding: 3rem;
+    border: 1rem;
 }

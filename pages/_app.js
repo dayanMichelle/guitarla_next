@@ -7,14 +7,12 @@ function MyApp({ Component, pageProps }) {
 
   //LocalStorage
   useEffect(() => {
-    const carritoLS= JSON.parse(localStorage.getItem('carrito')) ?? [];
+    const carritoLS = JSON.parse(localStorage.getItem("carrito")) ?? [];
     setCarrito(carritoLS);
   }, []);
   useEffect(() => {
     localStorage.setItem("carrito", JSON.stringify(carrito));
   }, [carrito]);
-
-
 
   const agregarCarrito = (producto) => {
     if (carrito.some((articulo) => articulo.id === producto.id)) {
@@ -30,7 +28,7 @@ function MyApp({ Component, pageProps }) {
     }
   };
 
-  const actualizarCantidad = producto => {
+  const actualizarCantidad = (producto) => {
     const carritoActualizado = carrito.map((articulo) => {
       if (articulo.id === producto.id) {
         articulo.cantidad = producto.cantidad;
@@ -38,9 +36,15 @@ function MyApp({ Component, pageProps }) {
       return articulo;
     });
     setCarrito(carritoActualizado);
-  }
+  };
+
+  const eliminarProducto = (id) => {
+    const carritoActulizado = carrito.filter(articulo => articulo.id !== id);
+    setCarrito(carritoActulizado);
+  };
   return (
     <Component
+      eliminarProducto={eliminarProducto}
       actualizarCantidad={actualizarCantidad}
       carrito={carrito}
       agregarCarrito={agregarCarrito}
