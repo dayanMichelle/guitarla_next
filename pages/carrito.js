@@ -78,8 +78,8 @@ const Carrito = ({ carrito,actualizarCantidad,eliminarProducto }) => {
                 </>
             ) : (
                 <>
-                {total}
-                <p>No hya productos en el carrito</p>
+        
+                <p>No hay productos en el carrito</p>
                 </>
                 
             )}
